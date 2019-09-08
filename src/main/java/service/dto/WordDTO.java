@@ -1,17 +1,13 @@
-/**
- * 
- */
 package service.dto;
+
+import domain.Synonym;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import core.Sentence;
-import domain.Synonym;
+public class WordDTO implements Comparable<WordDTO> {
 
-public class WordDTO implements Comparable<WordDTO>{
-	
 	private int wordId;
 	private int sentenceId;
 	private int textId;
@@ -31,9 +27,13 @@ public class WordDTO implements Comparable<WordDTO>{
 		this.hash = hash;
 		this.synonyms = synonyms;
 	}
-	
+
 	public int getWordId() {
 		return wordId;
+	}
+
+	public void setWordId(int wordId) {
+		this.wordId = wordId;
 	}
 
 	public int getSentenceId() {
@@ -52,14 +52,14 @@ public class WordDTO implements Comparable<WordDTO>{
 		this.textId = textId;
 	}
 
-	public void setWordId(int wordId) {
-		this.wordId = wordId;
-	}
-
 	public String getWord() {
 		return word;
 	}
-	
+
+	public void setWord(String word) {
+		this.word = word;
+	}
+
 	public String getOriginalWord() {
 		return originalWord;
 	}
@@ -68,26 +68,22 @@ public class WordDTO implements Comparable<WordDTO>{
 		this.originalWord = originalWord;
 	}
 
-	public void setWord(String word) {
-		this.word = word;
-	}
-	
 	public String getType() {
 		return type;
 	}
-	
+
 	public void setType(String type) {
 		this.type = type;
 	}
-	
+
 	public Integer getHash() {
 		return hash;
 	}
-	
+
 	public void setHash(Integer hash) {
 		this.hash = hash;
 	}
-	
+
 	public Set<Synonym> getSynonyms() {
 		return synonyms;
 	}
@@ -98,25 +94,23 @@ public class WordDTO implements Comparable<WordDTO>{
 
 	@Override
 	public String toString() {
-		String message = "Word: " + this.originalWord +", Id: " + this.wordId + ", Type: " + this.type + ", SynonymsGroups: ";
-		if(this.getSynonyms()!=null && this.getSynonyms().size()>0) {
-			List<Synonym> synonymsList = new ArrayList<Synonym>(this.getSynonyms());
-			for(int i=0;i<synonyms.size();i++) {
-				message += synonymsList.get(i) + " ";
+		StringBuilder message = new StringBuilder("Word: " + this.originalWord + ", Id: " + this.wordId + ", Type: " + this.type + ", SynonymsGroups: ");
+		if (this.getSynonyms() != null && this.getSynonyms().size() > 0) {
+			List<Synonym> synonymsList = new ArrayList<>(this.getSynonyms());
+			for (int i = 0; i < synonyms.size(); i++) {
+				message.append(synonymsList.get(i)).append(" ");
 			}
 		}
-		return message;
+		return message.toString();
 	}
-	
-	
-	
+
+
 	@Override
-	 public int compareTo(WordDTO other) {
-        if (this.word.length() > other.getWord().length()) return 1;
-        else if (this.word.length() == other.getWord().length()) return 0;
-        else return -1;
-    }
-	
-	
-	
+	public int compareTo(WordDTO other) {
+		if (this.word.length() > other.getWord().length()) return 1;
+		else if (this.word.length() == other.getWord().length()) return 0;
+		else return -1;
+	}
+
+
 }

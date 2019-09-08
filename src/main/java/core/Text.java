@@ -1,6 +1,3 @@
-/**
- * 
- */
 package core;
 
 import java.util.ArrayList;
@@ -10,16 +7,16 @@ public class Text {
 	private int textId;
 	private String rawText;
 	private String hashedText;
-	private List<Sentence> sentences = new ArrayList<Sentence>();
-	private List<Sentence> sentencesSorted = new ArrayList<Sentence>();
+	private List<Sentence> sentences = new ArrayList<>();
+	private List<Sentence> sentencesSorted = new ArrayList<>();
 	private Boolean isPrepared;
-	
-	Text(int textId, String rawText){
+
+	Text(int textId, String rawText) {
 		this.textId = textId;
 		this.rawText = rawText;
 		isPrepared = false;
 	}
-	
+
 	public int getTextId() {
 		return textId;
 	}
@@ -69,11 +66,11 @@ public class Text {
 	}
 
 	public Sentence getSentenceById(int id) {
-		for(int i=0;i<sentences.size();i++) {
-			if(sentences.get(i).getSentenceId() == id) return sentences.get(i);
+		for (int i = 0; i < sentences.size(); i++) {
+			if (sentences.get(i).getSentenceId() == id) return sentences.get(i);
 		}
 		return null;
 	}
-	
-	
+
+
 }
