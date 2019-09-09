@@ -3,7 +3,7 @@ package service;
 import core.Parameters;
 import core.TextComparator;
 
-class SolverService {
+public class SolverService {
 
 	private Parameters parameters;
 	private TextComparator textComparator;
@@ -13,7 +13,7 @@ class SolverService {
 		textComparator = new TextComparator(parameters);
 	}
 
-	private void resetService() {
+	public void resetService() {
 		textComparator = new TextComparator(parameters);
 	}
 

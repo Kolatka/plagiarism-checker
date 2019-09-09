@@ -1,0 +1,115 @@
+.parent {
+    -fx-background-color: #303138;
+}
+
+.close-btn {
+    -fx-background-color: transparent;
+}
+
+.close-btn:hover {
+    -fx-background-color: #E81123;
+}
+
+.minus-btn {
+    -fx-background-color: transparent;
+}
+
+.minus-btn:hover {
+    -fx-background-color: #171717;
+}
+
+.txtfield {
+    -fx-background-color: #3B4148;
+    -fx-background-radius: 0px;
+    -fx-prompt-text-fill: #ADADAD;
+    -fx-text-fill: #FFFFFF;
+}
+
+.txtfield:focused {
+    -fx-background-color: #363b41;
+    -fx-background-radius: 0px;
+    -fx-prompt-text-fill: #ADADAD;
+    -fx-text-fill: #FFFFFF;
+}
+
+.text-area {
+    text-area-background: #DDE6EC;
+    -fx-border-width: 1px;
+    -fx-border-color: #2C3762;
+}
+
+.text-area:focused {
+    text-area-background: #E6EFF6;
+    -fx-border-width: 2px;
+    -fx-border-color: #2C3762;
+}
+
+.text-area .content {
+    -fx-background-color: text-area-background;
+}
+
+.check-btn {
+    -fx-background-color: #424E7D;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 1;
+    -fx-border-width: 1px;
+    -fx-border-color: #2C3762;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16px;
+    -fx-padding: 2 30 2 30;
+}
+
+.check-btn:hover {
+    -fx-background-color: #5E6687;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 1;
+    -fx-border-width: 1px;
+    -fx-border-color: #2C3762;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16px;
+    -fx-padding: 2 30 2 30;
+}
+
+.check-btn:focused {
+    -fx-background-color: #5E6687;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 1;
+    -fx-border-width: 1px;
+    -fx-border-color: #2C3762;
+    -fx-text-fill: #000000;
+    -fx-font-size: 16px;
+    -fx-padding: 2 30 2 30;
+}
+
+.btn {
+    -fx-background-color: #5A648C;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 1;
+    -fx-border-width: 1px;
+    -fx-border-color: #2C3762;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16px;
+    -fx-padding: 2 0 2 0;
+}
+
+.btn:hover {
+    -fx-background-color: #73788F;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 1;
+    -fx-border-width: 1px;
+    -fx-border-color: #2C3762;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16px;
+    -fx-padding: 2 0 2 0;
+}
+
+.btn:focused {
+    -fx-background-color: #73788F;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 1;
+    -fx-border-width: 1px;
+    -fx-border-color: #2C3762;
+    -fx-text-fill: #000000;
+    -fx-font-size: 16px;
+    -fx-padding: 2 0 2 0;
+}
