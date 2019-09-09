@@ -1,58 +1,31 @@
 package application;
 
-import java.awt.Desktop;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.URL;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-
-import com.sun.javafx.logging.Logger;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
-import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -103,14 +76,12 @@ public class MainWindowController implements Initializable {
 	private Pane pane1;
 	@FXML
 	private Pane pane2;
-	Stage stage;
-	String type ="";
-	final FileChooser fileChooser = new FileChooser();
-	
-	Boolean isSearchClicked=false, isParametersClicked=false, isPrepareClicked=false, isTextsClicked=false, isSecondTextClicked=false;
-	Boolean isTextLoaded=false, isTextPrepared=false, isTextCompared=false;
-	
-	SolverService solverService;
+	private Stage stage;
+
+	private Boolean isParametersClicked=false;
+	private Boolean isSecondTextClicked=false;
+
+	private SolverService solverService;
 	
 	
 	public void initialize(URL location, ResourceBundle resources) {
@@ -124,22 +95,21 @@ public class MainWindowController implements Initializable {
 
 	}
 
-	private String readFile(String path, Charset encoding) throws IOException{
+	private String readFile(String path) throws IOException{
 		  byte[] encoded = Files.readAllBytes(Paths.get(path));
-		  return new String(encoded, encoding);
+		  return new String(encoded, StandardCharsets.UTF_8);
 	}
 	
 	@FXML
-	private void handleButtonAction(ActionEvent event) throws IOException, InterruptedException{
+	private void handleButtonAction(ActionEvent event) throws IOException {
 		ConfirmBoxController cbc = new ConfirmBoxController();
 		stage = (Stage) mainPane.getScene().getWindow();
-	    Parent root;
 	    if(event.getSource()==searchButton){   
 	    	FileChooser fileChooser = new FileChooser();
-	    	fileChooser.setTitle("Wybierz plik");
+	    	fileChooser.setTitle("Choose a file");
 	    	File file = fileChooser.showOpenDialog(stage);
 	    	if(file!=null) {
-	    		String str = readFile(file.getAbsolutePath(), StandardCharsets.UTF_8);
+	    		String str = readFile(file.getAbsolutePath());
 		    	if(secondTextAreaClicked && textArea2.isVisible()) textArea2.setText(str);
 		    	else textArea.setText(str);
 	    	}
@@ -163,7 +133,7 @@ public class MainWindowController implements Initializable {
 			}
 	    	
 		}else if(event.getSource()==prepareButton){  
-			if(cbc.showStage("Przygotowywanie może chwile potrwać, czy na pewno chcesz rozpocząć?","Potwierdzenie przygotowywania") == 1) {
+			if(cbc.showStage("Preparing can take a while. Are you sure?","Confirmation") == 1) {
 				prepareButton();
 			}
 		}else if(event.getSource()==textsButton){   
@@ -191,7 +161,7 @@ public class MainWindowController implements Initializable {
 		}else if(event.getSource()==saveParametersButton){ 
 			solverService.loadParameters(isSortingWordsCheckBox.isSelected(), isSortingSentencesCheckBox.isSelected(), isUsingFlexionsCheckBox.isSelected(), isUsingWordTypesCheckBox.isSelected(), isCheckingSynonymsCheckBox.isSelected());
 		}else if(event.getSource()==compareButton){ 
-			if(cbc.showStage("Czy na pewno chcesz rozpocząć porównywanie tekstów?","Potwierdzenie operacji") == 1) {
+			if(cbc.showStage("Are you sure you want to compare texts?","Confirmation") == 1) {
 				Task<Boolean> task = new Task<Boolean>() {
 			        @Override
 			        public Boolean call() {
@@ -230,7 +200,7 @@ public class MainWindowController implements Initializable {
 	    };
 	    task.setOnSucceeded(e -> {
 	    	try {
-				alertBoxController.showStage("Pomyślnie przygotowano teksty", "sukces");
+				alertBoxController.showStage("Success!", "Success");
 				compareButton.setDisable(false);
 			} catch (IOException e1) {
 				e1.printStackTrace();
@@ -275,24 +245,16 @@ public class MainWindowController implements Initializable {
 		Platform.runLater( () -> ta.appendText(s + "\n") );
 	}
 
-	Boolean secondTextAreaClicked=false;
+	private Boolean secondTextAreaClicked=false;
 	private void eventHandlers() {
-		textArea.setOnMouseClicked(new EventHandler<MouseEvent>() {
-			@Override
-            public void handle(MouseEvent event) {
-                if (event.getButton().equals(MouseButton.PRIMARY)) {
-                	secondTextAreaClicked=false;
-                }
-            }
-        });
-		textArea2.setOnMouseClicked(new EventHandler<MouseEvent>() {
-			@Override
-            public void handle(MouseEvent event) {
-                if (event.getButton().equals(MouseButton.PRIMARY)) {
-                	secondTextAreaClicked=true;
-                }
-            }
-        });
+		textArea.setOnMouseClicked(event -> {
+		if (event.getButton().equals(MouseButton.PRIMARY)) {
+						secondTextAreaClicked=false;
+		}});
+		textArea2.setOnMouseClicked(event -> {
+		if (event.getButton().equals(MouseButton.PRIMARY)) {
+						secondTextAreaClicked=true;
+		}});
 	}
 
 	public void showStage(Parent root, Stage stage){

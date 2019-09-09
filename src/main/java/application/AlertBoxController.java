@@ -4,20 +4,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class AlertBoxController implements Initializable {
 
@@ -28,7 +24,7 @@ public class AlertBoxController implements Initializable {
 	@FXML
 	private Label textLabel;
 	
-	static String text = "";
+	private static String text = "";
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -36,7 +32,7 @@ public class AlertBoxController implements Initializable {
 	}
 	
 	@FXML
-	private void handleButtonAction(ActionEvent event) throws IOException{
+	private void handleButtonAction(ActionEvent event) {
 		Stage stage = (Stage) mainPane.getScene().getWindow();
 		if(event.getSource()==okButton){ 
 			stage.close();
@@ -45,7 +41,7 @@ public class AlertBoxController implements Initializable {
 
 	@FXML
 	public void showStage(String message, String title) throws IOException{
-		this.text = message;
+		text = message;
 		Stage stage = new Stage();
 		Parent root = FXMLLoader.load(getClass().getResource("/presentation/AlertBox.fxml"));
 		Scene scene = new Scene(root);

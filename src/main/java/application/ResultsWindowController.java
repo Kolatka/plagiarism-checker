@@ -17,7 +17,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import service.SolverService;
 
 
 public class ResultsWindowController implements Initializable {
@@ -30,10 +29,9 @@ public class ResultsWindowController implements Initializable {
 	private TextArea resultsArea;
 	@FXML 
 	private BorderPane mainPane;
-	
-	Stage stage;
-	static String stats = "";
-	static String sentences = "";
+
+	private static String stats = "";
+	private static String sentences = "";
 	
 	
 	@Override
@@ -42,8 +40,7 @@ public class ResultsWindowController implements Initializable {
 	}
 	
 	@FXML
-	private void handleButtonAction(ActionEvent event) throws IOException{
-		Stage stage = (Stage) mainPane.getScene().getWindow();
+	private void handleButtonAction(ActionEvent event) {
 		if(event.getSource()==statsButton){ 
 			resultsArea.setText(stats);
 	    }else if(event.getSource()==sentencesButton){ 
