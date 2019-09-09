@@ -14,10 +14,10 @@
                 <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
                     <children>
                         <Button fx:id="yesButton" mnemonicParsing="false" onAction="#handleButtonAction"
-                                prefWidth="150.0" styleClass="btn" text="Tak" GridPane.halignment="CENTER"
+                                prefWidth="150.0" styleClass="btn" text="Yes" GridPane.halignment="CENTER"
                                 GridPane.valignment="CENTER"/>
                         <Button fx:id="noButton" mnemonicParsing="false" onAction="#handleButtonAction"
-                                prefWidth="150.0" text="Nie" GridPane.columnIndex="2" GridPane.halignment="CENTER"
+                                prefWidth="150.0" text="No" GridPane.columnIndex="2" GridPane.halignment="CENTER"
                                 GridPane.valignment="CENTER">
                             <styleClass>
                                 <String fx:value="check-btn"/>

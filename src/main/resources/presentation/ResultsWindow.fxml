@@ -112,7 +112,7 @@
                     <children>
                         <Button fx:id="statsButton" alignment="CENTER" contentDisplay="CENTER" maxWidth="150.0"
                                 minWidth="150.0" mnemonicParsing="false" onAction="#handleButtonAction"
-                                prefWidth="150.0" styleClass="check-btn" text="STATYSTYKI" textFill="#bc0f0f"
+                                prefWidth="150.0" styleClass="check-btn" text="STATS" textFill="#bc0f0f"
                                 GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <font>
                                 <Font name="Microsoft Sans Serif" size="14.0"/>
@@ -120,7 +120,7 @@
                         </Button>
                         <Button fx:id="sentencesButton" alignment="CENTER" contentDisplay="CENTER" maxWidth="150.0"
                                 minWidth="150.0" mnemonicParsing="false" onAction="#handleButtonAction"
-                                prefWidth="150.0" styleClass="check-btn" text="ZDANIA" textFill="#bc0f0f"
+                                prefWidth="150.0" styleClass="check-btn" text="SENTENCES" textFill="#bc0f0f"
                                 GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <font>
                                 <Font name="Microsoft Sans Serif" size="14.0"/>

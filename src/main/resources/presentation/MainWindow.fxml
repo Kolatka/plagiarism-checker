@@ -76,7 +76,7 @@
             </BorderPane.margin>
             <children>
                 <Button fx:id="compareButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
-                        onAction="#handleButtonAction" styleClass="check-btn" text="SPRAWDŹ" textFill="#bc0f0f"
+                        onAction="#handleButtonAction" styleClass="check-btn" text="COMPARE" textFill="#bc0f0f"
                         GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5"
                         GridPane.valignment="CENTER">
                     <font>
@@ -98,7 +98,7 @@
                     <children>
                         <Button fx:id="searchButton" alignment="CENTER" contentDisplay="CENTER"
                                 maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction"
-                                styleClass="btn" text="DODAJ TEKST Z PLIKU" textFill="#bc0f0f"
+                                styleClass="btn" text="ADD TEXT FROM FILE" textFill="#bc0f0f"
                                 GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <font>
                                 <Font name="Microsoft Sans Serif" size="14.0"/>
@@ -109,7 +109,7 @@
                         </Button>
                         <Button fx:id="parametersButton" alignment="CENTER" contentDisplay="CENTER"
                                 maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction"
-                                styleClass="btn" text="PARAMETRY BADANIA" textFill="#bc0f0f" GridPane.columnIndex="1"
+                                styleClass="btn" text="PARAMETERS" textFill="#bc0f0f" GridPane.columnIndex="1"
                                 GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <font>
                                 <Font name="Microsoft Sans Serif" size="14.0"/>
@@ -120,7 +120,7 @@
                         </Button>
                         <Button fx:id="secondTextButton" alignment="CENTER" contentDisplay="CENTER"
                                 maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction"
-                                styleClass="btn" text="WKLEJ WZORZEC" textFill="#bc0f0f" GridPane.columnIndex="5"
+                                styleClass="btn" text="ADD PATTERN" textFill="#bc0f0f" GridPane.columnIndex="5"
                                 GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <font>
                                 <Font name="Microsoft Sans Serif" size="14.0"/>
@@ -131,17 +131,17 @@
                         </Button>
                         <Button fx:id="prepareButton" alignment="CENTER" contentDisplay="CENTER"
                                 maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction"
-                                styleClass="btn" text="PRZYGOTUJ TEKSTY" textFill="#bc0f0f" GridPane.columnIndex="2">
+                                styleClass="btn" text="PREPARE TEXTS" textFill="#bc0f0f" GridPane.columnIndex="2">
                             <font>
-                                <Font name="Microsoft Sans Serif" size="14.0"/>
+                                <Font name="Microsoft Sans Serif" size="14.0" />
                             </font>
                             <GridPane.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </GridPane.margin>
                         </Button>
                         <Button fx:id="textsButton" alignment="CENTER" contentDisplay="CENTER"
                                 maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction"
-                                styleClass="btn" text="BAZA TEKSTÓW" textFill="#bc0f0f" GridPane.columnIndex="3">
+                                styleClass="btn" text="---" textFill="#bc0f0f" GridPane.columnIndex="3">
                             <font>
                                 <Font name="Microsoft Sans Serif" size="14.0"/>
                             </font>
@@ -196,23 +196,23 @@
                             </rowConstraints>
                             <children>
                                 <CheckBox fx:id="isSortingWordsCheckBox" mnemonicParsing="false"
-                                          onAction="#handleButtonAction" text="Sortuj słowa" textFill="WHITE"
+                                          onAction="#handleButtonAction" text="Sort words" textFill="WHITE"
                                           GridPane.rowIndex="2"/>
                                 <CheckBox fx:id="isSortingSentencesCheckBox" mnemonicParsing="false"
-                                          onAction="#handleButtonAction" text="Sortuj zdania" textFill="WHITE"
+                                          onAction="#handleButtonAction" text="Sort sentences" textFill="WHITE"
                                           GridPane.rowIndex="3"/>
                                 <CheckBox fx:id="isUsingFlexionsCheckBox" mnemonicParsing="false"
-                                          onAction="#handleButtonAction" text="Uwzględniaj odmiany" textFill="WHITE"
+                                          onAction="#handleButtonAction" text="Include variations" textFill="WHITE"
                                           GridPane.rowIndex="4"/>
                                 <CheckBox fx:id="isUsingWordTypesCheckBox" mnemonicParsing="false"
-                                          onAction="#handleButtonAction" text="Uwzględniaj części mowy" textFill="WHITE"
+                                          onAction="#handleButtonAction" text="Include parts of speech" textFill="WHITE"
                                           GridPane.rowIndex="5"/>
                                 <CheckBox fx:id="isCheckingSynonymsCheckBox" mnemonicParsing="false"
-                                          onAction="#handleButtonAction" text="Uwzględniaj synonimy" textFill="WHITE"
+                                          onAction="#handleButtonAction" text="Include synonyms" textFill="WHITE"
                                           GridPane.rowIndex="6"/>
                                 <Button fx:id="saveParametersButton" alignment="CENTER" contentDisplay="CENTER"
                                         mnemonicParsing="false" onAction="#handleButtonAction" styleClass="check-btn"
-                                        text="Zapisz" textFill="#bc0f0f" GridPane.halignment="CENTER"
+                                        text="Save" textFill="#bc0f0f" GridPane.halignment="CENTER"
                                         GridPane.rowIndex="7" GridPane.valignment="CENTER">
                                     <font>
                                         <Font name="Microsoft Sans Serif" size="14.0"/>
