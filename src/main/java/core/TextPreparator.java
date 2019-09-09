@@ -63,7 +63,7 @@ class TextPreparator {
 		statistics.startTimer("splitText");
 		logger.log("Splitting text");
 
-		String textString = textToPrepare.getRawText().replaceAll("\\[|\\]|\\)|\\(|\\}|\\{|\\,|\\<|\\>|\\:|\\;|\\-|\\”|\\„", " ");
+		String textString = textToPrepare.getRawText().replaceAll("[()<>\\[\\]\\-:;{},\\”\\„=+*\\/]", " ");
 		textString = textString.replaceAll("\\.", "\\. ");
 		textString = textString.replaceAll("  ", " ");
 		words = textString.split("\\s+");
