@@ -25,7 +25,7 @@ public class TestController {
         System.out.println(solverService.getComparingStatistics());
 
         return solverService.getComparingStatistics();*/
-        return "index.jsp";
+        return "index";
     }
 }
 
