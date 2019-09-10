@@ -1,4 +1,4 @@
-package util;
+package com.kolatka.textscomparator.util;
 
 class SingleStat {
 

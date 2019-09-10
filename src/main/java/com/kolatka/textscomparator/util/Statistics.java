@@ -1,4 +1,4 @@
-package util;
+package com.kolatka.textscomparator.util;
 
 import java.util.ArrayList;
 
