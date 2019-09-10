@@ -14,20 +14,17 @@ public class Statistics {
 		comparison = 0;
 	}
 
-
 	public void startTimer(String taskName) {
 		currentStat = new SingleStat();
 		currentStat.setTask(taskName);
 		currentStat.setStartTime(System.nanoTime());
 	}
 
-
 	public void stopTimer() {
 		currentStat.setEndTime(System.nanoTime());
 		currentStat.setTime(currentStat.getEndTime() - currentStat.getStartTime());
 		times.add(currentStat);
 	}
-
 
 	public Double getLastStat() {
 		if (times.get(times.size() - 1).getTime() < 1000) return 0.0;

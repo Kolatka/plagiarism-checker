@@ -1,8 +1,6 @@
 package com.kolatka.textscomparator.util;
 
-/**
- * @author Kolatka
- */
+
 public class Logger {
 
 	private final String className;

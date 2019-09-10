@@ -8,7 +8,6 @@ class SingleStat {
 	private Long endTime;
 	private int textId;
 
-
 	public String getTask() {
 		return task;
 	}
@@ -48,6 +47,5 @@ class SingleStat {
 	public void setTextId(int textId) {
 		this.textId = textId;
 	}
-
 
 }

@@ -1,6 +1,5 @@
 package com.kolatka.textscomparator.util;
 
-
 public class Hasher {
 
 	public static int hash(String word) {
@@ -10,5 +9,4 @@ public class Hasher {
 		}
 		return hash;
 	}
-
 }
