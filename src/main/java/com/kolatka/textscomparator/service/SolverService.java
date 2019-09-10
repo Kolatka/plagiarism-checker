@@ -1,7 +1,7 @@
-package service;
+package com.kolatka.textscomparator.service;
 
-import core.Parameters;
-import core.TextComparator;
+import com.kolatka.textscomparator.core.Parameters;
+import com.kolatka.textscomparator.core.TextComparator;
 
 public class SolverService {
 

@@ -7,10 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 
-/**
- * @author Kolatka
- *
- */
 public class MyApp extends Application {
 	
 	private Stage stage;

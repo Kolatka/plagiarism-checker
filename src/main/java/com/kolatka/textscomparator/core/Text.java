@@ -1,4 +1,4 @@
-package core;
+package com.kolatka.textscomparator.core;
 
 import java.util.ArrayList;
 import java.util.List;

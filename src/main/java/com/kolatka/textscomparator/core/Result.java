@@ -1,6 +1,6 @@
-package core;
+package com.kolatka.textscomparator.core;
 
-import service.dto.WordDTO;
+import com.kolatka.textscomparator.service.dto.WordDTO;
 
 import java.util.ArrayList;
 import java.util.List;

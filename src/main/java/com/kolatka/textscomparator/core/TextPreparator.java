@@ -1,12 +1,12 @@
-package core;
+package com.kolatka.textscomparator.core;
 
-import domain.Acronym;
-import domain.Word;
-import service.DataService;
-import service.SessionService;
-import service.dto.WordDTO;
-import util.Logger;
-import util.Statistics;
+import com.kolatka.textscomparator.domain.Acronym;
+import com.kolatka.textscomparator.domain.Word;
+import com.kolatka.textscomparator.service.DataService;
+import com.kolatka.textscomparator.service.SessionService;
+import com.kolatka.textscomparator.service.dto.WordDTO;
+import com.kolatka.textscomparator.util.Logger;
+import com.kolatka.textscomparator.util.Statistics;
 
 import java.util.ArrayList;
 import java.util.Collections;

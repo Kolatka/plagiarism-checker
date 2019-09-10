@@ -1,6 +1,6 @@
-package service.dto;
+package com.kolatka.textscomparator.service.dto;
 
-import domain.Synonym;
+import com.kolatka.textscomparator.domain.Synonym;
 
 import java.util.ArrayList;
 import java.util.List;

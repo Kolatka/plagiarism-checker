@@ -1,4 +1,4 @@
-package core;
+package com.kolatka.textscomparator.core;
 
 public class Parameters {
 	private Boolean isSortingWords;

@@ -1,13 +1,5 @@
 package application;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ResourceBundle;
-
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -30,6 +22,14 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import service.SolverService;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ResourceBundle;
 
 
 public class MainWindowController implements Initializable {
@@ -180,7 +180,7 @@ public class MainWindowController implements Initializable {
 			}
 		}
 	}
-	
+
 	private void prepareButton() {
 		solverService.resetService();
 		AlertBoxController alertBoxController = new AlertBoxController();
@@ -188,7 +188,7 @@ public class MainWindowController implements Initializable {
 	        @Override
 	        public Boolean call() {
 	        	if(textArea.getText().length()>0) {
-	    			solverService.loadFirstText(textArea.getText());
+						solverService.loadFirstText(textArea.getText());
 	    			solverService.prepareText(0);
 	    		}
 	    		if(textArea2.getText().length()>0) {

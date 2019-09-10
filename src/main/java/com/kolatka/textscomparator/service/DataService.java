@@ -1,12 +1,12 @@
-package service;
+package com.kolatka.textscomparator.service;
 
-import domain.Acronym;
-import domain.Flexion;
-import domain.Synonym;
-import domain.Word;
+import com.kolatka.textscomparator.domain.Word;
+import com.kolatka.textscomparator.domain.Acronym;
+import com.kolatka.textscomparator.domain.Flexion;
+import com.kolatka.textscomparator.domain.Synonym;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import util.Hasher;
+import com.kolatka.textscomparator.util.Hasher;
 
 import java.util.List;
 import java.util.Random;

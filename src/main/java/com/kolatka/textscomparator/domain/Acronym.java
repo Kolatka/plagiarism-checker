@@ -1,4 +1,4 @@
-package domain;
+package com.kolatka.textscomparator.domain;
 
 import javax.persistence.*;
 

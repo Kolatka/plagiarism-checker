@@ -1,4 +1,4 @@
-package service;
+package com.kolatka.textscomparator.service;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

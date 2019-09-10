@@ -16,9 +16,9 @@
    <property name="show_sql">false</property>
    <property name="hbm2ddl.auto">update</property>
 
-	<mapping class="domain.Word" />
-	<mapping class="domain.Flexion" />
-	<mapping class="domain.Acronym" />
-	<mapping class="domain.Synonym" />
+	<mapping class="com.kolatka.textscomparator.domain.Word" />
+	<mapping class="com.kolatka.textscomparator.domain.Flexion" />
+	<mapping class="com.kolatka.textscomparator.domain.Acronym" />
+	<mapping class="com.kolatka.textscomparator.domain.Synonym" />
 </session-factory>
 </hibernate-configuration>
