@@ -1,14 +1,19 @@
 package com.kolatka.textscomparator.webapplication.controller;
 
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.kolatka.textscomparator.webapplication.service.ComparatorService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 
-@Controller
-public class TestController {
+@RestController
+public class ComparatorController {
 
-    @GetMapping("/")
+    @Autowired
+    ComparatorService comparatorService;
+
+
+    @GetMapping("/results")
     public String showIndex(){
         /*System.out.println("started");
         String t1 = "To jest test tekstu z nawiasami(różnymi) oraz symbolami takimi jak: <jeden> {dwa}; [trzy]; super-ekstra. Lol. 200/5+4=44.";
@@ -25,8 +30,14 @@ public class TestController {
         System.out.println(solverService.getComparingStatistics());
 
         return solverService.getComparingStatistics();*/
-        return "index";
+        return "random result";
     }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/firsttext")
+    public void sendString(@RequestBody String firstText){
+
+    }
+
 }
 
 
