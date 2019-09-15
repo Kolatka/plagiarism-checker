@@ -1,6 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Plagiarism Checker</title>
@@ -17,9 +18,8 @@
         <label><input type="checkbox">Part of Speech</label>
     </p>
     <form action="#" th:action="@{/}" th:object="${comparation}" method="post">
-        <p><input type="text" th:field="*{leftText}" />
-        <textarea rows="8" cols="70" style="resize: none;" th:text="${leftText}"></textarea>
-        <textarea rows="8" cols="70" style="resize: none;"></textarea>
+        <input rows="8" cols="70" type="textarea" th:field="*{leftText}" />
+        <input rows="8" cols="70" type="textarea" th:field="*{rightText}" />
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
     </form>
 
